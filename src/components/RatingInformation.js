@@ -1,8 +1,101 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { TextField, Grid,  } from '@material-ui/core'
+import { AccountCircle } from '@material-ui/icons';
 
-export default function RatingInformation() {
-    return (
-        <div>Rating</div>
-    )
+export default class RatingInformation extends Component {
+    // State declarations
+    state = {}
+
+    // Update state
+    handleOnChange = (label, value) => {
+        this.setState({[label]: value})
+    }
+
+    // Sends state values to parent
+    handleOnSubmit = (e) => {
+        e.preventDefault()
+        this.props.parentHandleSubmit(this.state)
+    }
+
+    render(){
+        return (
+            <form onSubmit={this.handleOnSubmit}>
+                {/* FIRST NAME */}
+                <Grid container spacing={1} alignItems="flex-end">
+                    <Grid item>
+                        <AccountCircle />
+                    </Grid>
+                    <Grid item>
+                        <TextField id="input-with-icon-grid" label="First Name" onChange={(e) => this.handleOnChange("first_name", e.target.value)} value={this.state.first_name}/>
+                    </Grid>
+                </Grid>
+
+                {/* LAST NAME */}
+                <Grid container spacing={1} alignItems="flex-end">
+                    <Grid item>
+                        <AccountCircle />
+                    </Grid>
+                    <Grid item>
+                        <TextField id="input-with-icon-grid" label="Last Name" onChange={(e) => this.handleOnChange( "last_name", e.target.value)} value={this.state.last_name}/>
+                    </Grid>
+                </Grid>
+
+                <div>
+                    <h5>Address</h5>
+                    {/* LINE_1 */}
+                    <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                            <AccountCircle />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="input-with-icon-grid" label="Line 1" onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value})} value={this.state.address && this.state.address.line_1}/>
+                        </Grid>
+                    </Grid>
+
+                    {/* LINE_2 */}
+                    <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                            <AccountCircle />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="input-with-icon-grid" label="Line 2" onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value})} value={this.state.address && this.state.address.line_2}/>
+                        </Grid>
+                    </Grid>
+
+                    {/* CITY */}
+                    <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                            <AccountCircle />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="input-with-icon-grid" label="City" onChange={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value})} value={this.state.address && this.state.address.city}/>
+                        </Grid>
+                    </Grid>
+
+                    {/* REGION */}
+                    <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                            <AccountCircle />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="input-with-icon-grid" label="Region" onChange={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value})} value={this.state.address && this.state.address.region}/>
+                        </Grid>
+                    </Grid>
+
+                    {/* POSTAL */}
+                    <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                            <AccountCircle />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="input-with-icon-grid" label="Postal" onChange={(e) => this.handleOnChange("address", {...this.state.address, "postal": e.target.value})} value={this.state.address && this.state.address.postal}/>
+                        </Grid>
+                    </Grid>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        )
+    }
 }
 
