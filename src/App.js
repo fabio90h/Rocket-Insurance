@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import RatingInformation from './components/RatingInformation';
+import QuoteOverview from './components/QuoteOverview';
 
 class App extends Component{
   state = {
-    errors: {}
+    errors: {},
+    quote: null
   }
 
+  // UPDATES THE STATES
+  handleStateChange = (label, value) => {
+    this.setState({[label]: value})
+  }
+
+  // API POST REQUEST 
   handleSubmit = async (values) => {
     try{
-      this.setState({errors: {}}) //reset error
+      this.handleStateChange('errors', {}) //reset error
       let { data } = await axios.post('https://fed-challenge-api.sure.now.sh/api/v1/quotes', values)
-      console.log(data)
+      this.handleStateChange('quote', data)
     }
     catch(error){
       if(error.request){
-        this.setState({errors: JSON.parse(error.request.response).errors}) //update error from API
+        this.handleStateChange("errors", JSON.parse(error.request.response).errors) //update error from API
       }
     }
   }
@@ -23,7 +31,11 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <RatingInformation parentErrors={this.state.errors} parentHandleSubmit={this.handleSubmit}/>
+        {
+          this.state.quote ? 
+          <QuoteOverview quoteData={this.state.quote} writeToParent={(label, value) => this.handleStateChange(label, value)}/> :
+          <RatingInformation parentErrors={this.state.errors} parentHandleSubmit={this.handleSubmit}/>
+        }
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TextField, Grid,  } from '@material-ui/core'
+import { TextField, Grid, Button } from '@material-ui/core'
 import { AccountCircle } from '@material-ui/icons';
 
 export default class RatingInformation extends Component {
@@ -12,13 +12,22 @@ export default class RatingInformation extends Component {
             line_2: "3B",
             city: "San Francisco",
             region: "CA",
-            postal: 94422,
+            postal: "94422",
         }
+
+        // first_name: "",
+        // last_name: "",
+        // address: {
+        //     line_1: "",
+        //     line_2: "",
+        //     city: "",
+        //     region: "",
+        //     postal: "",
+        // }
     }
 
     // Update state
     handleOnChange = (label, value) => {
-        console.log(this.props.parentErrors)
         this.setState({[label]: value})
     }
 
@@ -72,7 +81,7 @@ export default class RatingInformation extends Component {
                         </Grid>
                     </Grid>
                 </div>
-                
+
                 <div>
                     <h5>Address</h5>
                     {/* LINE_1 */}
@@ -162,7 +171,7 @@ export default class RatingInformation extends Component {
                     </Grid>
                 </div>
 
-                <button type="submit">Submit</button>
+                <Button type="submit">Submit</Button>
             </form>
         )
     }
