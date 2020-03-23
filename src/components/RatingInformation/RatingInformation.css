@@ -1,0 +1,45 @@
+
+#ratingInformationCard{
+    /* border: 1px solid black; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: row;
+    min-width: 45vh;
+    max-width: 80vh;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+form{
+    padding: 10px;
+    background-color: rgb(245, 247, 245);
+
+    /* background-color: grey; */
+}
+
+#addressTitle, #ratingInformationTitle{
+    display: flex;
+    align-items: flex-end;
+    /* border: 1px solid green; */
+}
+
+#addressTitle span, #ratingInformationTitle span{
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.ratingInformation, .addressInformation {
+    /* display: flex; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* border: 0.5px solid black; */
+    margin-bottom: 10px;
+    padding: 10px;
+    /* width: 60%; */
+    /* justify-content: space-between; */
+}
+
+.MuiFormControl-root {
+    margin-right: 10px !important;
+    margin-top: 10px !important;
+}

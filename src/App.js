@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import RatingInformation from './components/RatingInformation';
+import RatingInformation from './components/RatingInformation/RatingInformation';
 import QuoteOverview from './components/QuoteOverview';
 
 class App extends Component{
