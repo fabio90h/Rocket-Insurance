@@ -135,12 +135,15 @@ export default class RatingInformation extends Component {
                     </div>
 
                     <br/>
-                    <Button 
-                        variant="outlined" 
-                        type="submit"
-                        size="large"
-                        color="primary"
-                    >Get a quote</Button>
+
+                    <div id="submitQuoteButton">
+                        <Button 
+                            variant="outlined" 
+                            type="submit"
+                            size="large"
+                            color="primary"
+                        >Get a quote</Button>
+                    </div>
                 </form>
             </div>
         )

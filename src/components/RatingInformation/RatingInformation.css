@@ -39,6 +39,10 @@ form{
     /* justify-content: space-between; */
 }
 
+#submitQuoteButton{
+    padding: 10px;
+}
+
 .MuiFormControl-root {
     margin-right: 10px !important;
     margin-top: 10px !important;
