@@ -25,7 +25,7 @@ function QuoteCard(props) {
                             id="demo-simple-select-outlined"
                             value={selectedOption}
                             onChange={(e) => setSelectOption(e.target.value)}
-                            label="Values"
+                            label="Coverage Limit"
                         >
                             {props.info.values.map((current, index) => <MenuItem key={index} value={current}>${current}</MenuItem>)}
                         </Select>
