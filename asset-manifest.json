@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Rocket-Insurance/static/css/main.8930fd90.chunk.css",
+    "main.js": "/Rocket-Insurance/static/js/main.8d812d35.chunk.js",
+    "main.js.map": "/Rocket-Insurance/static/js/main.8d812d35.chunk.js.map",
+    "runtime-main.js": "/Rocket-Insurance/static/js/runtime-main.0c84b856.js",
+    "runtime-main.js.map": "/Rocket-Insurance/static/js/runtime-main.0c84b856.js.map",
+    "static/css/2.ae45834d.chunk.css": "/Rocket-Insurance/static/css/2.ae45834d.chunk.css",
+    "static/js/2.455b150a.chunk.js": "/Rocket-Insurance/static/js/2.455b150a.chunk.js",
+    "static/js/2.455b150a.chunk.js.map": "/Rocket-Insurance/static/js/2.455b150a.chunk.js.map",
+    "index.html": "/Rocket-Insurance/index.html",
+    "precache-manifest.ab2d790ccaccde1be6b700a2e164ec1d.js": "/Rocket-Insurance/precache-manifest.ab2d790ccaccde1be6b700a2e164ec1d.js",
+    "service-worker.js": "/Rocket-Insurance/service-worker.js",
+    "static/css/2.ae45834d.chunk.css.map": "/Rocket-Insurance/static/css/2.ae45834d.chunk.css.map",
+    "static/css/main.8930fd90.chunk.css.map": "/Rocket-Insurance/static/css/main.8930fd90.chunk.css.map",
+    "static/js/2.455b150a.chunk.js.LICENSE.txt": "/Rocket-Insurance/static/js/2.455b150a.chunk.js.LICENSE.txt",
+    "static/media/meteor.jpg": "/Rocket-Insurance/static/media/meteor.db6d01cf.jpg",
+    "static/media/rocket.jpg": "/Rocket-Insurance/static/media/rocket.bc8b6388.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c84b856.js",
+    "static/css/2.ae45834d.chunk.css",
+    "static/js/2.455b150a.chunk.js",
+    "static/css/main.8930fd90.chunk.css",
+    "static/js/main.8d812d35.chunk.js"
+  ]
+}
