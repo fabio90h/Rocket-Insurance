@@ -27,4 +27,4 @@
 
 
 ## Live Application
-Click on the link below to view the application live at
+View the application live at https://fabio90h.github.io/Rocket-Insurance/
