@@ -7,7 +7,7 @@ function QuoteCard(props) {
 
     return(
         <div id="quoteCard">
-            {props.imagesURL && <div id="cardImage"><img src={props.imagesURL} alt={`Image of ${props.info.title}`} /></div>}
+            {props.imagesURL && <div id="cardImage"><img src={props.imagesURL} alt={props.info.title} /></div>}
             <div id="quoteCardForm">
                 {/* TITLE */}
                 <h4>{props.info.title}</h4>

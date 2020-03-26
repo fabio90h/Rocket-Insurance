@@ -14,7 +14,7 @@ function QuoteOverview(props) {
     return(
         <div id="quoteOverview">
             <h2>Quote Overview</h2>
-            <div><b>Annual Premium: </b>{`$${quote.premium} USD`}</div>
+            <div><b>Annual Premium:</b>{` $${quote.premium} USD`}</div>
             <div id="quoteCardHolder">
                 {
                     Object.keys(quote.variable_options).map((current, index) => {

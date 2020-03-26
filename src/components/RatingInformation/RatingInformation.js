@@ -47,7 +47,7 @@ export default class RatingInformation extends Component {
     render(){
         return (
             <div id="ratingInformationCard">
-                <img src="https://www.itl.cat/pngfile/big/191-1915916_low-poly-rocket.jpg" alt="Image of Rocket" width="250"/>         
+                <img src="https://www.itl.cat/pngfile/big/191-1915916_low-poly-rocket.jpg" alt="Rocket"/>         
                 <form onSubmit={this.handleOnSubmit}>
                     <div className="ratingInformation">
                         <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>
