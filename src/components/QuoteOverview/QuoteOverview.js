@@ -34,7 +34,6 @@ function QuoteOverview(props) {
             
             <Button 
                 onClick={() => props.writeToParent("quote", null)}
-                // variant="outlined" 
                 type="submit"
                 size="large"
                 color="primary"

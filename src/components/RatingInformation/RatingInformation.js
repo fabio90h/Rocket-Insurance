@@ -11,25 +11,25 @@ import 'react-overlay-loader/styles.css'
 export default class RatingInformation extends Component {
     // State declarations
     state = {
-        first_name: "John",
-        last_name: "Doe",
-        address: {
-            line_1: "123 Drive",
-            line_2: "3B",
-            city: "San Francisco",
-            region: "CA",
-            postal: "94422",
-        }
-
-        // first_name: "",
-        // last_name: "",
+        // first_name: "John",
+        // last_name: "Doe",
         // address: {
-        //     line_1: "",
-        //     line_2: "",
-        //     city: "",
-        //     region: "",
-        //     postal: "",
+        //     line_1: "123 Drive",
+        //     line_2: "3B",
+        //     city: "San Francisco",
+        //     region: "CA",
+        //     postal: "94422",
         // }
+
+        first_name: "",
+        last_name: "",
+        address: {
+            line_1: "",
+            line_2: "",
+            city: "",
+            region: "",
+            postal: "",
+        }
     }
 
     // Update state
@@ -51,10 +51,13 @@ export default class RatingInformation extends Component {
     render(){
         return (
             <LoadingOverlay>
-                <Loader 
-                    loading={this.props.load} />
+                {/* LOADING SPINNER */}
+                <Loader loading={this.props.load} />
                 <div id="ratingInformationCard">
-                    <img src={rocket} alt="Rocket"/>         
+                    {/* IMAGE */}
+                    <img src={rocket} alt="Rocket"/>
+
+                    {/* FORM */}
                     <form onSubmit={this.handleOnSubmit}>
                         <div className="ratingInformation">
                             <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>
@@ -72,7 +75,6 @@ export default class RatingInformation extends Component {
                             {/* LAST NAME */}
                             <TextField
                                 required
-                                id="input-with-icon-grid" 
                                 label="Last Name"
                                 onChange={(e) => this.handleOnChange( "last_name", e.target.value)}
                                 onBlur={(e) => this.handleOnBlur("last_name", e.target.value.trim())} 
@@ -80,14 +82,13 @@ export default class RatingInformation extends Component {
                             />
                         </div>
                                 
-
+                        {/* ADDRESS INFORMATION */}
                         <div className="addressInformation">
                             <div id="addressTitle"><HomeTwoTone fontSize="large"/><span>Address</span></div>
                             {/* LINE_1 */}
                             
                             <TextField 
                                 required
-                                id="input-with-icon-grid"
                                 label="Line 1" 
                                 onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value})}
                                 onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value.trim()})} 
@@ -95,9 +96,7 @@ export default class RatingInformation extends Component {
                                 
 
                             {/* LINE_2 */}
-                            
                             <TextField
-                                id="input-with-icon-grid" 
                                 label="Line 2" 
                                 onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value})}
                                 onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value.trim()})}
@@ -107,8 +106,7 @@ export default class RatingInformation extends Component {
 
                             {/* CITY */}
                             <TextField
-                                required
-                                id="input-with-icon-grid" 
+                                required 
                                 label="City" 
                                 onChange={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value})}
                                 onBlur={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value.trim()})} 
@@ -119,7 +117,6 @@ export default class RatingInformation extends Component {
                             
                             <TextField
                                 required
-                                id="input-with-icon-grid" 
                                 label="Region" 
                                 onChange={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value})}
                                 onBlur={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value.trim()})}
@@ -130,7 +127,6 @@ export default class RatingInformation extends Component {
                             {/* POSTAL */}
                             <TextField
                                 required
-                                id="input-with-icon-grid" 
                                 type="number" 
                                 label="Postal" 
                                 helperText={this.props.parentErrors.address !== undefined && this.props.parentErrors.address.postal !== undefined ? "Invalid Postal" : null}
@@ -143,6 +139,7 @@ export default class RatingInformation extends Component {
 
                         <br/>
 
+                        {/* SUBMIT BUTTON */}
                         <div id="submitQuoteButton">
                             <Button 
                                 variant="outlined" 
