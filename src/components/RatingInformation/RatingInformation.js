@@ -7,25 +7,25 @@ import './RatingInformation.css'
 export default class RatingInformation extends Component {
     // State declarations
     state = {
-        // first_name: "John",
-        // last_name: "Doe",
-        // address: {
-        //     line_1: "123 Drive",
-        //     line_2: "3B",
-        //     city: "San Francisco",
-        //     region: "CA",
-        //     postal: "94422",
-        // }
-
-        first_name: "",
-        last_name: "",
+        first_name: "John",
+        last_name: "Doe",
         address: {
-            line_1: "",
-            line_2: "",
-            city: "",
-            region: "",
-            postal: "",
+            line_1: "123 Drive",
+            line_2: "3B",
+            city: "San Francisco",
+            region: "CA",
+            postal: "94422",
         }
+
+        // first_name: "",
+        // last_name: "",
+        // address: {
+        //     line_1: "",
+        //     line_2: "",
+        //     city: "",
+        //     region: "",
+        //     postal: "",
+        // }
     }
 
     // Update state
@@ -47,7 +47,7 @@ export default class RatingInformation extends Component {
     render(){
         return (
             <div id="ratingInformationCard">
-                <img src="https://www.itl.cat/pngfile/big/191-1915916_low-poly-rocket.jpg" width="250"/>         
+                <img src="https://www.itl.cat/pngfile/big/191-1915916_low-poly-rocket.jpg" alt="Image of Rocket" width="250"/>         
                 <form onSubmit={this.handleOnSubmit}>
                     <div className="ratingInformation">
                         <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>
