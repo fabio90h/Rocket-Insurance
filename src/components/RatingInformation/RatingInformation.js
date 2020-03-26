@@ -4,6 +4,9 @@ import { HomeTwoTone, AccountCircleTwoTone } from '@material-ui/icons';
 import rocket from '../../media/rocket.jpg'
 import './RatingInformation.css'
 
+import { LoadingOverlay, Loader } from 'react-overlay-loader'
+import 'react-overlay-loader/styles.css'
+
 
 export default class RatingInformation extends Component {
     // State declarations
@@ -47,106 +50,110 @@ export default class RatingInformation extends Component {
 
     render(){
         return (
-            <div id="ratingInformationCard">
-                <img src={rocket} alt="Rocket"/>         
-                <form onSubmit={this.handleOnSubmit}>
-                    <div className="ratingInformation">
-                        <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>
+            <LoadingOverlay>
+                <Loader 
+                    loading={this.props.load} />
+                <div id="ratingInformationCard">
+                    <img src={rocket} alt="Rocket"/>         
+                    <form onSubmit={this.handleOnSubmit}>
+                        <div className="ratingInformation">
+                            <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>
 
-                        {/* <h4>Rating Information</h4> */}
-                        {/* FIRST NAME */}
-                        <TextField
-                            required
-                            label="First Name" 
-                            onChange={(e) => this.handleOnChange("first_name", e.target.value)}
-                            onBlur={(e) => this.handleOnBlur("first_name", e.target.value.trim())}
-                            value={this.state.first_name}
-                        />
+                            {/* <h4>Rating Information</h4> */}
+                            {/* FIRST NAME */}
+                            <TextField
+                                required
+                                label="First Name" 
+                                onChange={(e) => this.handleOnChange("first_name", e.target.value)}
+                                onBlur={(e) => this.handleOnBlur("first_name", e.target.value.trim())}
+                                value={this.state.first_name}
+                            />
 
-                        {/* LAST NAME */}
-                        <TextField
-                            required
-                            id="input-with-icon-grid" 
-                            label="Last Name"
-                            onChange={(e) => this.handleOnChange( "last_name", e.target.value)}
-                            onBlur={(e) => this.handleOnBlur("last_name", e.target.value.trim())} 
-                            value={this.state.last_name}
-                        />
-                    </div>
+                            {/* LAST NAME */}
+                            <TextField
+                                required
+                                id="input-with-icon-grid" 
+                                label="Last Name"
+                                onChange={(e) => this.handleOnChange( "last_name", e.target.value)}
+                                onBlur={(e) => this.handleOnBlur("last_name", e.target.value.trim())} 
+                                value={this.state.last_name}
+                            />
+                        </div>
+                                
+
+                        <div className="addressInformation">
+                            <div id="addressTitle"><HomeTwoTone fontSize="large"/><span>Address</span></div>
+                            {/* LINE_1 */}
+                            
+                            <TextField 
+                                required
+                                id="input-with-icon-grid"
+                                label="Line 1" 
+                                onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value})}
+                                onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value.trim()})} 
+                                value={this.state.address && this.state.address.line_1}/>
+                                
+
+                            {/* LINE_2 */}
+                            
+                            <TextField
+                                id="input-with-icon-grid" 
+                                label="Line 2" 
+                                onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value})}
+                                onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value.trim()})}
+                                value={this.state.address && this.state.address.line_2}
+                            />
                             
 
-                    <div className="addressInformation">
-                        <div id="addressTitle"><HomeTwoTone fontSize="large"/><span>Address</span></div>
-                        {/* LINE_1 */}
-                        
-                        <TextField 
-                            required
-                            id="input-with-icon-grid"
-                            label="Line 1" 
-                            onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value})}
-                            onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_1": e.target.value.trim()})} 
-                            value={this.state.address && this.state.address.line_1}/>
+                            {/* CITY */}
+                            <TextField
+                                required
+                                id="input-with-icon-grid" 
+                                label="City" 
+                                onChange={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value})}
+                                onBlur={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value.trim()})} 
+                                value={this.state.address && this.state.address.city}
+                            />
                             
-
-                        {/* LINE_2 */}
-                        
-                        <TextField
-                            id="input-with-icon-grid" 
-                            label="Line 2" 
-                            onChange={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value})}
-                            onBlur={(e) => this.handleOnChange("address", {...this.state.address, "line_2": e.target.value.trim()})}
-                            value={this.state.address && this.state.address.line_2}
-                        />
-                        
-
-                        {/* CITY */}
-                        <TextField
-                            required
-                            id="input-with-icon-grid" 
-                            label="City" 
-                            onChange={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value})}
-                            onBlur={(e) => this.handleOnChange("address", {...this.state.address, "city": e.target.value.trim()})} 
-                            value={this.state.address && this.state.address.city}
-                        />
-                        
-                        {/* REGION */}
-                        
-                        <TextField
-                            required
-                            id="input-with-icon-grid" 
-                            label="Region" 
-                            onChange={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value})}
-                            onBlur={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value.trim()})}
-                            value={this.state.address && this.state.address.region}
-                        />
+                            {/* REGION */}
                             
+                            <TextField
+                                required
+                                id="input-with-icon-grid" 
+                                label="Region" 
+                                onChange={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value})}
+                                onBlur={(e) => this.handleOnChange("address", {...this.state.address, "region": e.target.value.trim()})}
+                                value={this.state.address && this.state.address.region}
+                            />
+                                
 
-                        {/* POSTAL */}
-                        <TextField
-                            required
-                            id="input-with-icon-grid" 
-                            type="number" 
-                            label="Postal" 
-                            helperText={this.props.parentErrors.address !== undefined && this.props.parentErrors.address.postal !== undefined ? "Invalid Postal" : null}
-                            error={this.props.parentErrors.address !== undefined && this.props.parentErrors.address.postal !== undefined} 
-                            onChange={(e) => this.handleOnChange("address", {...this.state.address, "postal": e.target.value})}
-                            onBlur={(e) => this.handleOnChange("address", {...this.state.address, "postal": e.target.value.trim()})}
-                            value={this.state.address && this.state.address.postal}
-                        /> 
-                    </div>
+                            {/* POSTAL */}
+                            <TextField
+                                required
+                                id="input-with-icon-grid" 
+                                type="number" 
+                                label="Postal" 
+                                helperText={this.props.parentErrors.address !== undefined && this.props.parentErrors.address.postal !== undefined ? "Invalid Postal" : null}
+                                error={this.props.parentErrors.address !== undefined && this.props.parentErrors.address.postal !== undefined} 
+                                onChange={(e) => this.handleOnChange("address", {...this.state.address, "postal": e.target.value})}
+                                onBlur={(e) => this.handleOnChange("address", {...this.state.address, "postal": e.target.value.trim()})}
+                                value={this.state.address && this.state.address.postal}
+                            /> 
+                        </div>
 
-                    <br/>
+                        <br/>
 
-                    <div id="submitQuoteButton">
-                        <Button 
-                            variant="outlined" 
-                            type="submit"
-                            size="large"
-                            color="primary"
-                        >Get a quote</Button>
-                    </div>
-                </form>
-            </div>
+                        <div id="submitQuoteButton">
+                            <Button 
+                                variant="outlined" 
+                                type="submit"
+                                size="large"
+                                color="primary"
+                            >Get a quote</Button>
+                        </div>
+                    </form>
+                </div>
+            </LoadingOverlay>
         )
     }
 }

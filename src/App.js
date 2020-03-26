@@ -6,7 +6,8 @@ import QuoteOverview from './components/QuoteOverview/QuoteOverview';
 class App extends Component{
   state = {
     errors: {},
-    quote: null
+    quote: null,
+    load: false
   }
 
   // UPDATES THE STATES
@@ -17,6 +18,10 @@ class App extends Component{
   // API POST REQUEST 
   handleSubmit = async (values) => {
     try{
+      this.setState({
+        errors: {},
+        load: true
+      })
       this.handleStateChange('errors', {}) //reset error
       let { data } = await axios.post('https://fed-challenge-api.sure.now.sh/api/v1/quotes', values)
       this.handleStateChange('quote', data)
@@ -26,6 +31,9 @@ class App extends Component{
         this.handleStateChange("errors", JSON.parse(error.request.response).errors) //update error from API
       }
     }
+    finally{
+      this.setState({load: false})
+    }
   }
 
   render(){
@@ -34,7 +42,7 @@ class App extends Component{
         {
           this.state.quote ? 
           <QuoteOverview quoteData={this.state.quote} writeToParent={(label, value) => this.handleStateChange(label, value)}/> :
-          <RatingInformation parentErrors={this.state.errors} parentHandleSubmit={this.handleSubmit}/>
+          <RatingInformation load={this.state.load} parentErrors={this.state.errors} parentHandleSubmit={this.handleSubmit}/>
         }
       </div>
     );
