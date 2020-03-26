@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e5dbd33fe0110fec07aa70ba907ceade",
+    "revision": "01351c2b9cdfb23ee735e2c1cc816faa",
     "url": "/Rocket-Insurance/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Rocket-Insurance/static/css/2.ae45834d.chunk.css"
   },
   {
-    "revision": "65a145c86f0ed11e0611",
+    "revision": "f007a1d7c851fe2530b0",
     "url": "/Rocket-Insurance/static/css/main.8930fd90.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Rocket-Insurance/static/js/2.455b150a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "65a145c86f0ed11e0611",
-    "url": "/Rocket-Insurance/static/js/main.f40ddff0.chunk.js"
+    "revision": "f007a1d7c851fe2530b0",
+    "url": "/Rocket-Insurance/static/js/main.eea474d3.chunk.js"
   },
   {
     "revision": "a64619ed99bf44949f2d",
