@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { TextField, Button } from '@material-ui/core'
 import { HomeTwoTone, AccountCircleTwoTone } from '@material-ui/icons';
+import rocket from '../../media/rocket.jpg'
 import './RatingInformation.css'
 
 
@@ -47,7 +48,7 @@ export default class RatingInformation extends Component {
     render(){
         return (
             <div id="ratingInformationCard">
-                <img src="https://www.itl.cat/pngfile/big/191-1915916_low-poly-rocket.jpg" alt="Rocket"/>         
+                <img src={rocket} alt="Rocket"/>         
                 <form onSubmit={this.handleOnSubmit}>
                     <div className="ratingInformation">
                         <div id="ratingInformationTitle"><AccountCircleTwoTone fontSize="large"/><span>Rating Information</span></div>

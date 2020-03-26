@@ -2,13 +2,15 @@ import React from 'react'
 import QuoteCard from '../QuoteCard/QuoteCard'
 import { Button } from '@material-ui/core'
 import { ArrowBackIos } from '@material-ui/icons'
+import meteor from '../../media/meteor.jpg'
+import coins from '../../media/coins.jpeg'
 import './QuoteOverview.css'
 
 function QuoteOverview(props) {
     const { quote } = props.quoteData
     const imagesURL = {
-        deductible: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEupt71-vBxxr5_XzD4y5q6eiJM7GA3SZAHFSdzeNmDJiNfRGj",
-        asteroid_collision: "https://cdn.images.express.co.uk/img/dynamic/151/590x/Asteroid-warning-NASA-tracker-rock-bigger-Pyramids-NEO-Earth-asteroids-news-1218905.jpg?r=1576771179310"
+        deductible: coins,
+        asteroid_collision: meteor
     }
 
     return(
