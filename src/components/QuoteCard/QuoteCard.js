@@ -19,13 +19,13 @@ function QuoteCard(props) {
                 {/* DROPDOWN */}
                 <div id="cardDropdown">
                     <FormControl variant="outlined">
-                        <InputLabel id="demo-simple-select-outlined-label">Values</InputLabel>
+                        <InputLabel id="demo-simple-select-outlined-label">Coverage</InputLabel>
                         <Select
                             labelId="demo-simple-select-outlined-label"
                             id="demo-simple-select-outlined"
                             value={selectedOption}
                             onChange={(e) => setSelectOption(e.target.value)}
-                            label="Coverage Limit"
+                            label="Coverage"
                         >
                             {props.info.values.map((current, index) => <MenuItem key={index} value={current}>${current}</MenuItem>)}
                         </Select>
